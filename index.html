@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>rautaSydan.org</title>
@@ -5,6 +6,16 @@
 <script>
 function toggleInfo(){
 	$( "#sources" ).toggle(1);
+}
+function toggleMore(name){
+	var src = "";
+	if($('#'+name).css('display') == 'none'){
+		src = "web-img/chevron-up.png";
+	} else {
+		src = "web-img/chevron-down.png";
+	}
+	$('#'+name).slideToggle();
+	$('#'+name+'_btn').attr("src", src);
 }
 </script>
 <style type="text/css">
@@ -40,6 +51,7 @@ body {
 .pf_itm {
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 2em;
 }
 .pf_itm h1, .pf_itm h2, .pf_itm h3 {
 	margin: 0.2em 0;
@@ -60,7 +72,7 @@ body {
 	font-size: 1em;
 	text-align: justify;
 }
-.pf_itm img {
+.pf_itm_head img {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -82,7 +94,7 @@ body {
 }
 .footer {
 	font-size: 0.6em;
-	position: absolute;
+	position: fixed;
 	right: 0px;
 	bottom: 0px;
 	max-width: 256px;
@@ -103,6 +115,28 @@ body {
 	border-bottom: 1px solid #666;
 	padding: 0.5em 0;
 }
+.more_info {
+	display: none;
+	border-top: 1px dashed #CCC;
+	padding-top: 1em;
+}
+.more_btn {
+	width: 32px;
+	height: auto;
+	z-order: -1;
+	//opacity: 0.2;
+}
+
+.expanderImg {
+	width: 32px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.code {
+	padding: 1em;
+	background: #FCFCFC;
+	font-family: monospace;
+}
 </style>
 </head>
 <body>
@@ -111,29 +145,101 @@ body {
 <h1 class="title">rautaSydan</h1>
 <span class="subtitle">The portfolio page for Teemu Kokkonen.
 <br />You may also find me using the pseudonyms I-H or rautaSydan</span>
-<span class="links"><a href="http://twitter.com/rautaSydan"><img src="web-img/social-twitter-outline.png" /></a> <a href="http://fi.linkedin.com/pub/teemu-kokkonen/65/965/309"><img src="web-img/social-linkedin-outline.png" /></a>
+<span class="links">
+<a href="http://twitter.com/rautaSydan" target="_blank"><img src="web-img/social-twitter-outline.png" /></a>
+<a href="http://fi.linkedin.com/pub/teemu-kokkonen/65/965/309" target="_blank"><img src="web-img/social-linkedin-outline.png" /></a>
+</span>
 </div>
 <div class="pf_itm">
-<div class="pf_itm_head">
-	<h1>Microtransactions in an Android Game</h1>
-	<h2>Thesis</h2>
-	<h3>Karelia University of Applied Sciences</h3>
-	<a class="itm_link" href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank">http://urn.fi/URN:NBN:fi:amk-2014061212700</a>
-	<a href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank"><img src="web-img/document-text.png" /></a>
-</div>
-	<p>I wrote my thesis for the Business Information Technology studies about the small payments inside modern games, microtransactions. The thesis covers the short history of microtransactions as well two case studies to compare to the UK Office of Fair Trading microtransaction guidelines.</p>
-	
+	<div class="pf_itm_head" id="mtxiag">
+		<h1>Microtransactions in an Android Game</h1>
+		<h2>Thesis / English</h2>
+		<h3>Karelia University of Applied Sciences</h3>
+		<a class="itm_link" href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank">http://urn.fi/URN:NBN:fi:amk-2014061212700</a>
+		<a href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank"><img src="web-img/document-text.png" /></a>
+	</div>
+		<p>I wrote my thesis for the Business Information Technology studies about the small payments inside modern games, microtransactions. The thesis covers the short history of microtransactions as well two case studies to compare to the UK Office of Fair Trading microtransaction guidelines.</p>
+	</div>
 
+	<div class="pf_itm" id="townbuilder">
+		<div class="pf_itm_head">
+			<h1 >Project TownBuilder</h1>
+			<h2>Android game / Java</h2>
+			<h3>Personal project</h3>
+			<a class="itm_link" href="https://play.google.com/store/apps/details?id=org.rautasydan.townbuilder" target="_blank">https://play.google.com/store/apps/details?id=org.rautasydan.townbuilder</a>
+			<a href="https://play.google.com/store/apps/details?id=org.rautasydan.townbuilder" target="_blank"><img src="web-img/social-android.png" /></a>
+		</div>
+		<p>
+		<i>The game is currently available only for <a href="https://play.google.com/apps/testing/org.rautasydan.townbuilder" target="_blank">testers</a>. Pop me a message if you want in.</i><br /><br />
+		TownBuilder is a 2D, top-down building game which focuses on resource management, and later cooperation, to develop and level up a town that will keep you on the top of the leaderboards!
+		<br /><br />
+		A pacifist co-op RTS, if you will.
+		</p>
+		<div class="more_info" id="more_tb">
+		The game is in its current form only a husk of what I hope it to be. The game was developed alongside the "Microtransactions in an Android Game" thesis, in which the design is described more in-depth.
+		<br /><br />
+		<div class="code">
+			/**
+			<br /> * Put a resource in the stash
+			<br /> * @param type The type to put in
+			<br /> * @param amount The amount to put in
+			<br /> */
+			<br />public void put(ResType type, int tier, int amount){
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;Log.i(tag, "Putting " + amount + " pieces of tier " 
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ tier + " " + type.name() + " to stash.");
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;int i = type.ordinal();
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;if(limits[i] > 0 || resources[tier][i] + amount <= limits[i]){
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources[tier][i] += amount;
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;} else {
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Set resources to max and put rest to overflow
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int excess = (resources[tier][i]+amount) - limits[i]; 
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources[tier][i] = limits[i];
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow[tier][i] += excess/overflowDivider;
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+			<br />}
+			<br />public void put(ResType type, int amount){
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;put(type, defaultTier, amount);
+			<br />}
+		</div>
+		</div>
+		<div class="expanderImg"><a href="javascript:toggleMore('more_tb')"><img id="more_tb_btn" class="more_btn" src="web-img/chevron-down.png" /></a></div>
+	</div>
+	<div class="pf_itm" id="gd_scripts">
+	<div class="pf_itm_head">
+		<h1>gd_scripts</h1>
+		<h2>Unity script collection / C#</h2>
+		<h3>Personal project / KSAO</h3>
+		<a class="itm_link" href="https://github.com/kokkt/gd_scripts" target="_blank">https://github.com/kokkt/gd_scripts</a>
+		<a href="https://github.com/kokkt/gd_scripts" target="_blank"><img src="web-img/code.png" /></a>
+	</div>
+	<p>This collection of Unity C# scripts has been collected during the courses I have given as well as during some features I have programmed during free time. The aim of the scripts is to be simple little pieces of features that you can build a game with, or add to a pre-existing one.</p>
+	<!--<div class="more_info" id="more_id">More info</div>
+	<div class="expanderImg"><a href="javascript:toggleMore('more_id')"><img id="more_id_btn" class="more_btn" src="web-img/chevron-down.png" /></a></div>-->
 </div>
 </div>
 <div class="footer">
 	<div id="sources">
 		<ul>
-		<li><a href="https://useiconic.com/open/">Open Iconic</a><br />Copyright (c) 2014 Drifty (http://drifty.com/)</li>
+		<li><a href="http://ionicons.com/">Ionicons</a>:icons</li>
 		<li>2015 &copy; Teemu Kokkonen</li>
 		</ul>
 	</div>
 	<a href="javascript:toggleInfo()"><img src="web-img/information-circled.png"/></a>
 </div>
 </body>
+<!-- Portfolio item base
+
+<div class="pf_itm">
+	<div class="pf_itm_head">
+		<h1>Title</h1>
+		<h2>Type</h2>
+		<h3>Client</h3>
+		<a class="itm_link" href="" target="_blank">Link</a>
+		<a href="" target="_blank"><img src="" /></a>
+	</div>
+	<p>Description</p>
+	<div class="more_info" id="more_id">More info</div>
+	<div class="expanderImg"><a href="javascript:toggleMore('more_id')"><img id="more_id_btn" class="more_btn" src="web-img/chevron-down.png" /></a></div>
+</div>
+-->
 </html>
