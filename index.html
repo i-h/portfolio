@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>rautaSydan.org</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+function toggleInfo(){
+	$( "#sources" ).toggle(1);
+}
+</script>
+<style type="text/css">
+body {
+	font-family: "Arial Black", sans-serif;
+	margin-top: 0px;
+}
+.wrapper {
+	width: 40em;
+	margin: 0px auto;
+}
+.title {
+	margin: 1em 0 0.1em 0;
+	font-size: 2em;
+	color: #666;
+}
+.subtitle {
+	font-size: 0.8em;
+}
+.links {
+	float: right;
+	font-size: 0.6em;
+}
+.header {
+	margin-bottom: 2em;
+	overflow: hidden;
+}
+
+.pf_itm {
+	overflow: hidden;
+	position: relative;
+}
+.pf_itm h1, .pf_itm h2, .pf_itm h3 {
+	margin: 0.2em 0;
+}
+
+.pf_itm h1{
+	font-size: 1.7em;
+}
+.pf_itm h2 {
+	font-size: 1.2em;
+
+}
+.pf_itm h3 {
+	font-size: 1.2em;
+
+}
+.pf_itm p {
+	font-size: 1em;
+}
+.pf_itm img {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	//height: 128px;
+	//width: 128px;
+}
+.itm_link {
+	font-size: 0.8em;
+}
+.footer {
+	font-size: 0.6em;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	max-width: 256px;
+	text-align: right;
+}
+#sources {
+	display: none;
+	margin-right: 1em;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<h1 class="title">rautaSydan</h1>
+<span class="subtitle">The portfolio page for Teemu Kokkonen, a.k.a. I-H or rautaSydan</span>
+<span class="links"><a href="http://twitter.com/rautaSydan">twitter</a> <a href="http://fi.linkedin.com/pub/teemu-kokkonen/65/965/309">linkedin</a>
+</div>
+<div class="pf_itm">
+	<h1>Microtransactions in an Android Game</h1>
+	<h2>Thesis</h2>
+	<h3>Karelia University of Applied Sciences</h3>
+	<p>I wrote my thesis for the Business Information Technology studies</p>
+	<a class="itm_link" href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank">http://urn.fi/URN:NBN:fi:amk-2014061212700</a>
+	<a href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank"><img src="img/page_white_acrobat.png" /></a>
+</div>
+</div>
+<div class="footer">
+	<div id="sources">
+		<a href="http://www.famfamfam.com/lab/icons/silk/">icons (modified by resizing)</a><br />
+		2015 &copy; Teemu Kokkonen
+	</div>
+	<a href="javascript:toggleInfo()"><img src="img/ic_info.png"/></a>
+</div>
+</body>
+</html>
