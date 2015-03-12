@@ -54,16 +54,27 @@ body {
 }
 .pf_itm p {
 	font-size: 1em;
+	//clear: both;
 }
 .pf_itm img {
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	//height: 128px;
-	//width: 128px;
+	float: right;
+	width: 128px;
+	height: 128px;
+}
+.pf_itm_head {
+	overflow:hidden;
+	min-height: 128px;
+	position: relative;
+	margin-bottom: 1em;
 }
 .itm_link {
-	font-size: 0.8em;
+	font-size: 1em;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
 }
 .footer {
 	font-size: 0.6em;
@@ -73,9 +84,20 @@ body {
 	max-width: 256px;
 	text-align: right;
 }
+.footer img {
+	width: 4em;
+	height: 4em;
+}
 #sources {
 	display: none;
 	margin-right: 1em;
+}
+#sources ul{
+	list-style: none;
+}
+#sources li {
+	border-bottom: 1px solid #666;
+	padding: 0.5em 0;
 }
 </style>
 </head>
@@ -87,20 +109,26 @@ body {
 <span class="links"><a href="http://twitter.com/rautaSydan">twitter</a> <a href="http://fi.linkedin.com/pub/teemu-kokkonen/65/965/309">linkedin</a>
 </div>
 <div class="pf_itm">
+<div class="pf_itm_head">
 	<h1>Microtransactions in an Android Game</h1>
 	<h2>Thesis</h2>
 	<h3>Karelia University of Applied Sciences</h3>
-	<p>I wrote my thesis for the Business Information Technology studies</p>
 	<a class="itm_link" href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank">http://urn.fi/URN:NBN:fi:amk-2014061212700</a>
-	<a href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank"><img src="img/page_white_acrobat.png" /></a>
+	<a href="http://urn.fi/URN:NBN:fi:amk-2014061212700" target="_blank"><img src="img/document-text.png" /></a>
+</div>
+	<p>I wrote my thesis for the Business Information Technology studies Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat elementum lorem, eu sollicitudin magna imperdiet at. Nullam non dui non nulla pretium euismod. Nam ex massa, semper at risus ac, blandit eleifend nunc. Phasellus elementum molestie tellus, vel lobortis libero consequat at. Aenean convallis finibus eros ut vehicula. Donec finibus ultrices nunc, a convallis mauris pulvinar at. Pellentesque ac mi quis tellus dapibus interdum. </p>
+	
+
 </div>
 </div>
 <div class="footer">
 	<div id="sources">
-		<a href="http://www.famfamfam.com/lab/icons/silk/">icons (modified by resizing)</a><br />
-		2015 &copy; Teemu Kokkonen
+		<ul>
+		<li><a href="https://useiconic.com/open/">Open Iconic</a><br />Copyright (c) 2014 Drifty (http://drifty.com/)</li>
+		<li>2015 &copy; Teemu Kokkonen</li>
+		</ul>
 	</div>
-	<a href="javascript:toggleInfo()"><img src="img/ic_info.png"/></a>
+	<a href="javascript:toggleInfo()"><img src="img/information-circled.png"/></a>
 </div>
 </body>
 </html>
