@@ -4,6 +4,7 @@
 <title>rautaSydan.org</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
+var current_page = 'portfolio';
 function toggleInfo(){
 	$( "#sources" ).toggle(1);
 }
@@ -17,6 +18,31 @@ function toggleMore(name){
 	$('#'+name).slideToggle();
 	$('#'+name+'_btn').attr("src", src);
 }
+function switch_page(page_name){
+	if(current_page == page_name){
+		return;
+	}
+	$('#'+current_page).animate({
+	top:'-=10em',
+	opacity: 'hide',
+	},125, "swing", function() {
+		$('#' + page_name).css('top', '-10em');
+		$('#' + page_name).animate({
+		top:'0',
+		opacity: 'show',
+		}, 125);
+	});
+	current_page = page_name;
+	
+}
+$(function() {
+var containerW = $('.menu').width();
+var innerCount = $('.menu .menu_item').length;
+
+$('.menu_item').css({
+    width: containerW / innerCount
+});
+});
 </script>
 <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
@@ -29,8 +55,15 @@ function toggleMore(name){
 <span class="links">
 <a href="http://twitter.com/rautaSydan" target="_blank"><img src="web-img/social-twitter-outline.png" /></a>
 <a href="http://fi.linkedin.com/pub/teemu-kokkonen/65/965/309" target="_blank"><img src="web-img/social-linkedin-outline.png" /></a>
+<a href="https://github.com/i-h" target="_blank"><img src="web-img/social-github-outline.png" /></a>
 </span>
+<div class="menu">
+<a href="javascript: switch_page('portfolio')"><div class="menu_item">Portfolio</div></a>
+<a href="javascript: switch_page('cv')"><div class="menu_item">CV</div></a>
 </div>
+</div>
+<div class="content">
+<div class="page" id="portfolio">
 <div class="pf_itm">
 	<div class="pf_itm_head" id="mtxiag">
 		<h1>Microtransactions in an Android Game</h1>
@@ -96,6 +129,19 @@ function toggleMore(name){
 	<p>This collection of Unity C# scripts has been collected during the courses I have given as well as during some features I have programmed during free time. The aim of the scripts is to be simple little pieces of features that you can build a game with, or add to a pre-existing one.</p>
 	<!--<div class="more_info" id="more_id">More info</div>
 	<div class="expanderImg"><a href="javascript:toggleMore('more_id')"><img id="more_id_btn" class="more_btn" src="web-img/chevron-down.png" /></a></div>-->
+</div>
+</div>
+<div class="page" id="cv">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pellentesque blandit. Fusce aliquet elit ac aliquam eleifend. Quisque efficitur nulla at consectetur mattis. Suspendisse pellentesque metus id augue consectetur, vitae pretium nibh dignissim. Aliquam erat volutpat. Donec viverra vulputate odio, sed sodales dolor auctor id. Phasellus lorem tellus, posuere id hendrerit ultrices, convallis id dui. Phasellus cursus commodo congue. Sed consequat dictum ante, id pellentesque arcu ullamcorper vel. Nulla imperdiet, arcu quis rhoncus tincidunt, nisi sem euismod massa, nec pulvinar leo dui in dolor.
+
+Pellentesque at risus suscipit, ornare sapien et, viverra nisi. Maecenas non scelerisque ipsum. Nulla pellentesque nunc at nisi eleifend, a dapibus dui rutrum. Duis non mi in arcu ultrices posuere. Maecenas vitae hendrerit erat, ac dapibus ipsum. In a dolor id nunc pretium ullamcorper. Aliquam volutpat faucibus justo eu fermentum. Aliquam euismod sapien in euismod aliquet. Integer porttitor augue eleifend leo pharetra gravida. In hac habitasse platea dictumst. Sed et faucibus massa. Nulla ante enim, feugiat eget purus a, fringilla viverra ipsum. Mauris a nibh quam. Proin lorem lorem, porttitor eget vehicula facilisis, fringilla eu arcu. Phasellus hendrerit eleifend nulla, non vulputate risus vestibulum eget.
+
+Ut imperdiet eget lacus et imperdiet. Morbi et tempus nulla. Fusce sit amet dolor vitae risus pretium molestie a sit amet quam. Ut lorem ex, feugiat in blandit vitae, posuere consectetur nunc. Aenean et suscipit velit, et pretium quam. Morbi in mi a erat pellentesque malesuada. Cras sodales, quam vel placerat varius, odio nisi lobortis magna, sit amet vehicula tellus mi id nulla.
+
+Donec scelerisque libero non tincidunt cursus. Pellentesque mollis quam ac mollis finibus. Nunc est ipsum, efficitur ac placerat eget, posuere eu dolor. Suspendisse volutpat nisl ipsum, eu egestas dui elementum sed. Sed ullamcorper a nunc dictum scelerisque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus nec elit efficitur, semper odio id, ultricies leo. Suspendisse potenti. Nullam sed risus non enim dictum venenatis a sed risus. Morbi id feugiat purus, eu dictum ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus luctus mauris et libero finibus gravida. Etiam imperdiet sagittis felis at congue. Morbi suscipit tincidunt urna, at gravida nulla iaculis sagittis.
+
+Mauris dapibus metus sit amet tellus hendrerit, consequat consectetur nisl pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis consectetur mi tempus metus feugiat varius. Maecenas id imperdiet ligula, ut tempus nunc. Sed facilisis et ipsum ac feugiat. Curabitur convallis libero nec maximus consectetur. Pellentesque quis sodales ante. 
+</div>
 </div>
 </div>
 <div class="footer">
