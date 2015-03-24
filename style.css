@@ -58,6 +58,7 @@ position: relative;
 	margin: 0;
 	position: relative;
 	float: left;
+	width: 100%;
 }
 #cv {
 	display: none;
@@ -122,7 +123,7 @@ position: relative;
 	display: none;
 	margin-right: 1em;
 }
-#sources ul{
+ul{
 	list-style: none;
 }
 #sources li {
@@ -151,8 +152,61 @@ position: relative;
 	background: #FCFCFC;
 	font-family: monospace;
 }
+.cv_section {
+	width: 100%;
+}
+.cv_section .inner {
+	margin-left: 1em;
+	overflow: hidden;
+}
 .cv_section h1 {
 	font-size: 1.2em;
 	text-transform: uppercase;
+	margin-left: 0px;
+}
+.tech_section table {
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+.tech_section div {
+	overflow: hidden;
+	padding: 0.8em 0;
+	border-width: 0px;
+	border-style: solid;
+}
+.personal_data {
+	position: absolute;
+	right: 0px;
+}
+.comfortable {
+	color: #003;
+	border-color: #0CC;
+}
+.needs_practice {
+	color: #030;
+	border-color: #993;
+}
+.slightly_familiar {
+	color: #300;
+	border-color: #C60;
+}
+.data {
+	position: absolute;
+	left: 15em;
+}
+.dataCell {
+	width: 32em;
+	padding: 0.3em 0;
+}
+.tech_section ul {
+	clear: both;
+	margin: 0px;
+}
+.tech_section h2 {
+	font-size: 1em;
+	margin: 0px; 
 	
+}
+.cv_section {
+	clear: both;
 }
