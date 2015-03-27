@@ -154,6 +154,7 @@ ul{
 }
 .cv_section {
 	width: 100%;
+	position: relative;
 }
 .cv_section .inner {
 	margin-left: 1em;
@@ -164,15 +165,25 @@ ul{
 	text-transform: uppercase;
 	margin-left: 0px;
 }
+.tech_section {
+}
 .tech_section table {
 	width: 100%;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.8em;
 }
 .tech_section div {
 	overflow: hidden;
 	padding: 0.8em 0;
 	border-width: 0px;
 	border-style: solid;
+}
+.tech_section ul {
+	clear: both;
+	margin: 0px;
+}
+.tech_section h2 {
+	font-size: 1em;
+	margin: 0px; 
 }
 .personal_data {
 	position: absolute;
@@ -196,17 +207,38 @@ ul{
 }
 .dataCell {
 	width: 32em;
-	padding: 0.3em 0;
-}
-.tech_section ul {
-	clear: both;
-	margin: 0px;
-}
-.tech_section h2 {
-	font-size: 1em;
-	margin: 0px; 
-	
+	padding: 0.2em 0;
 }
 .cv_section {
 	clear: both;
+	margin-bottom: 2em;
+}
+.cert {
+	width: 12em;
+	height: auto;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: inline;
+}
+.xp_itm {
+	position: relative;
+	margin-bottom: 2em;
+}
+.xp_itm  h1 {
+	font-size: 1em;
+	margin: 0.4em 0;
+}
+.xp_itm  h2 {
+	font-size: 1em;
+	margin: 0;
+	padding-left: 0.8em;
+}
+.xp_itm  p {
+	padding-left: 0.8em;
+}
+.year {
+	position: absolute;
+	right: 0px;
+	top: 0px;
 }
