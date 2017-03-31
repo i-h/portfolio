@@ -153,9 +153,12 @@ ul{
 	background: #FCFCFC;
 	font-family: monospace;
 	clear: both;	
+	max-height: 20em;
+	overflow: auto;
+	
 }
 
-.code::before {
+/*.code::before {
 	content: "SCRIPT HIGHLIGHT";
 	position: absolute;
 	top: -0.5em;
@@ -165,7 +168,7 @@ ul{
 	font-family: sans-serif;
 	font-weight: bold;
 	
-}
+}*/
 
 .cv_section {
 	width: 100%;
@@ -264,6 +267,12 @@ ul{
 	border-top: 1px dashed #999;
 	position: relative;
 }
+.title_img {
+	width: 100%;
+	height: 4em;
+	background: url("web-img/ss/money.png") center no-repeat;
+	background-repeat: cover;
+}
 .proto_box h1, .proto_box h2 {
 	font-size: 1.2em;
 }
@@ -273,8 +282,6 @@ ul{
 	float:right;
 	right: 0px;
 	top: -2.4em;
-	width: 240px;
-	height: 150px;
 	margin-left: 16px;
 	
 }
