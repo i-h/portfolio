@@ -148,10 +148,25 @@ ul{
 	margin-right: auto;
 }
 .code {
+	position: relative;
 	padding: 1em;
 	background: #FCFCFC;
 	font-family: monospace;
+	clear: both;	
 }
+
+.code::before {
+	content: "SCRIPT HIGHLIGHT";
+	position: absolute;
+	top: -0.5em;
+	left: 0;
+	opacity: 0.1;
+	font-size: 1em;
+	font-family: sans-serif;
+	font-weight: bold;
+	
+}
+
 .cv_section {
 	width: 100%;
 	position: relative;
@@ -241,4 +256,32 @@ ul{
 	position: absolute;
 	right: 0px;
 	top: 0px;
+}
+.proto_box {
+	padding-left: 8px;
+	border-left: 8px solid #333;
+	border-bottom: 1px dashed #999;
+	border-top: 1px dashed #999;
+	position: relative;
+}
+.proto_box h1, .proto_box h2 {
+	font-size: 1.2em;
+}
+.proto_box img {
+	display: block;
+	position: relative;	
+	float:right;
+	right: 0px;
+	top: -2.4em;
+	width: 240px;
+	height: 150px;
+	margin-left: 16px;
+	
+}
+.proto_box p {
+	display: block;
+}
+.title_box {
+	height: 158px;
+	/*background: url("web-img/ss/money.png") no-repeat top right;*/
 }
